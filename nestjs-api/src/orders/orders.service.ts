@@ -21,9 +21,15 @@ export class OrdersService {
 
   findAll(filter: { walletId: string}) {
     return this.orderSchema.find({ wallet: filter.walletId });
+    //.populate(['asset', 'trade']);
   }
 
   findOne(id: string) {
     return this.orderSchema.findById(id);
+    //populate(['asset', 'trade']);
+  }
+
+  createTrade(){
+
   }
 }
