@@ -1,8 +1,10 @@
 import { AssetsPresenter } from '../assets/assets.presenter';
+import { Asset } from 'src/assets/entities/asset.entity';
+import { WalletAsset } from './entities/wallet-asset.entity';
 import { Wallet } from './entities/wallet.entity';
 
 export class WalletPresenter {
-  constructor(private wallet: Wallet) {}
+  constructor(private wallet: Wallet & { assets: (WalletAsset & { asset: Asset })[]}) {}
 
   toJSON() {
     return {
