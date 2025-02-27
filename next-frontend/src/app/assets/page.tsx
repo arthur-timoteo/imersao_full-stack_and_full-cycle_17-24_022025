@@ -1,8 +1,8 @@
 import { Button, Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
-import { Wallet } from "./../models";
-import Image from "next/image";
+import { Asset } from "./../models";
+import { AssetShow } from "../components/AssetShow";
 
-export async function getAssets(): Promise<Wallet>{
+export async function getAssets(): Promise<Asset[]>{
   const response = await fetch(`http://localhost:3000/assets`);
   return response.json();
 }
@@ -26,20 +26,7 @@ export default async function AssetsListPage() {
             {assets.map((asset, key) => (
               <TableRow key={key}>
                 <TableCell>
-                  <div className="flex space-x-1">
-                    <div className="content-center">
-                      <Image 
-                        src={asset.image_url} 
-                        alt={asset.symbol}
-                        width={30}
-                        height={30}
-                      />
-                    </div>
-                    <div className="flex flex-col text-sm">
-                      <span>{asset.name}</span>
-                      <span>{asset.symbol}</span>
-                    </div>
-                  </div>
+                  <AssetShow asset={asset} />
                 </TableCell>
                 <TableCell>R$ {asset.price}</TableCell>
                 <TableCell>
