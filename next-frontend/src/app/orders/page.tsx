@@ -1,4 +1,4 @@
-import { Button, Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
+import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
 import { Order } from "./../models";
 import { AssetShow } from "../components/AssetShow";
 import { OrderTypeBadge } from "../components/OrderTypeBadge";
