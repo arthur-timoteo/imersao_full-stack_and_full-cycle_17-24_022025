@@ -7,7 +7,7 @@ export async function getMyWallet(walletId: string): Promise<Wallet>{
   return response.json();
 }
 
-export default async function MyWalletList({searchParams}: {searchParams: Promise<{wallet_id: string}>;}) {
+export default async function MyWalletListPage({searchParams}: {searchParams: Promise<{wallet_id: string}>;}) {
   const { wallet_id } = await searchParams;
   const wallet = await getMyWallet(wallet_id);
 
