@@ -3,7 +3,7 @@ export type Asset = {
     name: string;
     symbol: string;
     price: string;
-    image: string;
+    image_url: string;
 }
 
 export type WalletAsset = {

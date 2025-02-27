@@ -31,7 +31,7 @@ export default async function MyWalletList({searchParams}: {searchParams: Promis
                   <div className="flex space-x-1">
                     <div className="content-center">
                       <Image 
-                        src={`http://localhost:9000/${walletAsset.asset.image}`} 
+                        src={walletAsset.asset.image_url} 
                         alt={walletAsset.asset.symbol}
                         width={30}
                         height={30}
