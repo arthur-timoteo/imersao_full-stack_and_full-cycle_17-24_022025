@@ -41,6 +41,7 @@ export default async function AssetsListPage(
                 <TableCell>R$ {asset.price}</TableCell>
                 <TableCell>
                   <Button 
+                    className="w-fit"
                     color="light" 
                     href={`/assets/${asset.symbol}?wallet_id=${wallet_id}`}
                   >
