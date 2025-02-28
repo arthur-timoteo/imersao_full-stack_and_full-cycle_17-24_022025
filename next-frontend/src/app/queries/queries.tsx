@@ -7,6 +7,11 @@ export async function getAssets(): Promise<Asset[]>{
 
 export async function getMyWallet(walletId: string): Promise<Wallet>{
     const response = await fetch(`http://localhost:3000/wallets/${walletId}`);
+
+    if(!response.ok){
+        return null;
+    }
+
     return response.json();
 }
 
