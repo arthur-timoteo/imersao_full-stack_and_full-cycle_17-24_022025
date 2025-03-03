@@ -20,7 +20,6 @@ export function AssetChartComponent( props: {
         socket.emit('joinAsset', {symbol});
 
         socket.on('assets/daily-created', (assetDaily) => {
-            console.log(assetDaily);
             chartRef.current?.update({
                 time: (Date.parse(assetDaily.date) / 1000) as Time,
                 value: assetDaily.price
