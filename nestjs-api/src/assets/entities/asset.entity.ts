@@ -4,7 +4,7 @@ import { HydratedDocument } from 'mongoose';
 
 export type AssetDocument = HydratedDocument<Asset>;
 
-@Schema({ timestamps: true, collectionOptions: {changeStreamPreAndPostImages: { enabled: true}} })
+@Schema({ timestamps: true, collectionOptions: {changeStreamPreAndPostImages: { enabled: true}}, optimisticConcurrency: true })
 export class Asset {
     @Prop({ default: () => crypto.randomUUID() })
     _id: string;
@@ -19,7 +19,7 @@ export class Asset {
     image: string;
 
     @Prop()
-    price: string;
+    price: number;
 
     createAt!: Date;
     updatedAt!: Date;
