@@ -36,18 +36,15 @@ export class OrdersService implements OnModuleInit {
     const order = await this.orderSchema.create({
       wallet: createOrderDto.walletId,
       asset: createOrderDto.assetId,
-      price: createOrderDto.price,
       shares: createOrderDto.shares,
       partial: createOrderDto.shares,
+      price: createOrderDto.price,
       type: createOrderDto.type,
       status: OrderStatus.PENDING
     });
 
-    /*return this.orderSchema.findById(order._id)
-      .populate(['asset'])  as Promise<(Order & { asset: Asset})>;*/
-
       await this.kafkaProducer.send({
-        topic: 'input',
+        topic: 'orders',
         messages: [
           {
             key: order._id,
@@ -63,18 +60,17 @@ export class OrdersService implements OnModuleInit {
         ],
       });
       
-      return order;
+      return this.orderSchema.findById(order._id)
+      .populate(['asset'])  as Promise<(Order & { asset: Asset})>;
   }
 
   findAll(filter: { walletId: string}) {
     return this.orderSchema.find({ wallet: filter.walletId })
     .populate(['asset']) as Promise<(Order & { asset: Asset})[]>;
-    //.populate(['asset', 'trade']);
   }
 
   findOne(id: string) {
     return this.orderSchema.findById(id);
-    //populate(['asset', 'trade']);
   }
 
   async createTrade(dto: CreateTradeDto){
