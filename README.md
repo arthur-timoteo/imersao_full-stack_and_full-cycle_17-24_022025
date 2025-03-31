@@ -6,42 +6,43 @@
 
 ## Project
 
-Um Home Broker com atualização em tempo real e que usa um simulador da B3.
+A Home Broker with real-time updates and that uses a B3 simulator.
 
 ## Features
 
-- Atualização de gráfico em tempo real com Web Socket;
-- Processamento das ordens de compra e venda com Go;
-- Arquitetura utilizando micro serviços;
-
+- Real-time chart update with Web Socket;
+- Processing of buy and sell orders with Go;
+- Architecture using microservices;
 
 ## Technologies/Libraries/Environment
 
 General:
 
-- Linux Ubuntu
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Insomnia](https://insomnia.rest/)
-- [Postman](https://www.postman.com/)
-- NPM
-- Docker
-- Docker Compose
-- Git
+- Windows 10 Home | 22H2
+- [Visual Studio Code | 1.98.2](https://code.visualstudio.com/)
+- [Insomnia | 10.3.1](https://insomnia.rest/)
+- [Postman | 11.34.5](https://www.postman.com/)
+- NPM | 10.2.4
+- Docker | 26.0.2
+- Docker Compose | 2.26.1
+- Git | 2.34.1
 
 Back-end (API):
 
-- [Node.JS | ](https://nodejs.org/en)
-- Nest.JS
-- MongoDB Connection
+- [Node.JS | 20.18.3](https://nodejs.org/en)
+- Nest.JS | 11.10.4
+- TypeScript
+- Mongoose (MongoDB Connection)
 - Websocket | Socket.IO
 - Kafka Connection
 
 Database:
 
-- MongoDB
+- MongoDB | 8.0.3
 
 Front-end (Web application):
 
+- [Node.JS | 20.18.3](https://nodejs.org/en)
 - Next.JS
 - TypeScript
 - Kafka Connection
@@ -49,23 +50,23 @@ Front-end (Web application):
 
 Simulador da B3:
 
-- Go
+- Go | 1.24.1
 - Kafka Connection
 
 Tópicos:
 
 - Apache Kafka
 
-## Arquitetura
+## Architecture
 
 <p align="center">
-  <img alt="Arquitetura" src=".github/architecture.PNG" width="100%">
+  <img alt="Architecture" src=".github/architecture.PNG" width="100%">
 </p>
 
-## Banco de dados
+## Database
 
 <p align="center">
-  <img alt="Banco de dados" src=".github/" width="100%">
+  <img alt="Database" src=".github/" width="100%">
 </p>
 
 ## Websockets and Change Stream
@@ -78,11 +79,47 @@ Tópicos:
 
 ### Apache Kafka
 
+1. Acesse a pasta do repositório;
+2. Acesse a pasta do projeto:
+```bash
+  cd go
+```
+3. Execute o comando abaixo para criar e iniciar o container com o Kafka:
+```bash
+  docker-compose up
+```
+
 ### Go
+
+1. Acesse a pasta do repositório;
+2. Acesse a pasta do projeto:
+```bash
+  cd go
+```
+3. Execute o comando abaixo para iniciar o projeto em Go:
+```bash
+  go run cmd/main/main.go
+```
 
 ### Database
 
+1. Acesse a pasta do repositório:
+2. Execute o comando abaixo para iniciar o container com o banco de dados:
+```bash
+  docker-compose up
+```
+
 ### Back-end (API)
+
+1. Acesse a pasta do repositório;
+2. Acesse a pasta do projeto:
+```bash
+  cd nestjs-api
+```
+3. Execute o comando abaixo para iniciar o projeto em Go:
+```bash
+  go run cmd/main/main.go
+```
 
 ### Images Server
 
