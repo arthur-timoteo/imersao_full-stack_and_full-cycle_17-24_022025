@@ -118,18 +118,73 @@ Tópicos:
 ```
 3. Execute o comando abaixo para iniciar o projeto em Go:
 ```bash
-  go run cmd/main/main.go
+  npm run start:dev
 ```
 
 ### Images Server
 
+1. Acesse a pasta do repositório;
+2. Acesse a pasta do projeto:
+```bash
+  cd nestjs-api
+```
+3. Execute o comando abaixo para iniciar o servidor:
+```bash
+  npm run asset-images
+```
+
 ### Back-end (API) - Consumer Kafka
+
+1. Acesse a pasta do repositório;
+2. Acesse a pasta do projeto:
+```bash
+  cd nestjs-api
+```
+3. Execute o comando abaixo para iniciar o consumidor do Kafka na API:
+```bash
+  npm run consumer
+```
 
 ### Front-end (Web Application)
 
+1. Acesse a pasta do repositório;
+2. Acesse a pasta do projeto:
+```bash
+  cd next-frontend
+```
+3. Execute o comando abaixo para iniciar a aplicação web:
+```bash
+  npm run dev
+```
+
 ### Data Generator for the Database
 
+1. Acesse a pasta do repositório;
+2. Acesse a pasta do projeto:
+```bash
+  cd nestjs-api
+```
+3. Execute o comando abaixo para iniciar a aplicação web:
+```bash
+  npm run command simulate-assets-price
+```
+
 ## Improvements
+
+- validação das requests
+- validação com websockets
+- autenticação na api e no next.js
+- user event driven para atualizar o saldo
+- separar a finalização da ordem, da atualização do saldo do ativo
+- criar event socket para atualizar o saldo do ativo na carteira
+- criar um notification no next.js + websocket para mostrar quando uma ordem foi executada
+- criar um saldo em reais para carteira
+- usar cache do lado servidor para consultar ativos e orders com preço fixo depois do horário de negociação
+- evitar que o websocket envie notificações se não houverem clientes
+- evitar que usuário não pertencente as orders de se enscrver no websocket de notificações daquela order
+- reprocessamento da finalização das orders em caso de falha
+- se for venda, verificar se o saldo é suficiente
+- testes
 
 ## License
 
