@@ -18,7 +18,7 @@ export function OrderForm(props: { asset: Asset, walletId: string, type: OrderTy
         socket.connect();
         const newOrder: Order = await socket.emitWithAck('orders/create', data);
 
-        toast(`Orderm de  ${translatedType} de ${newOrder.shares} ações de ${newOrder.asset.symbol} criada com sucesso`,
+        toast(`Orderm de ${translatedType} de ${newOrder.shares} ações de ${newOrder.asset.symbol} criada com sucesso`,
             { type: 'success', position: 'top-right'}
         );
     }
