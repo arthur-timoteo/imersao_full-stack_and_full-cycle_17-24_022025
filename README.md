@@ -48,12 +48,12 @@ Front-end (Web application):
 - Kafka Connection
 - Websocket | Socket.IO
 
-Simulador da B3:
+B3 Simulator:
 
 - Go | 1.24.1
 - Kafka Connection
 
-Tópicos:
+Queue:
 
 - Apache Kafka
 
@@ -66,7 +66,7 @@ Tópicos:
 ## Database
 
 <p align="center">
-  <img alt="Database" src=".github/" width="100%">
+  <img alt="Database" src=".github/database.jpg" width="100%">
 </p>
 
 ## Websockets and Change Stream
@@ -79,112 +79,116 @@ Tópicos:
 
 ### Apache Kafka
 
-1. Acesse a pasta do repositório;
-2. Acesse a pasta do projeto:
+1. Go to the repository folder;
+2. Go to the project folder:
 ```bash
   cd go
 ```
-3. Execute o comando abaixo para criar e iniciar o container com o Kafka:
+3. Run the command below to create and launch the container with Kafka:
 ```bash
   docker-compose up
 ```
 
 ### Go
 
-1. Acesse a pasta do repositório;
-2. Acesse a pasta do projeto:
+1. Go to the repository folder;
+2. Go to the project folder:
 ```bash
   cd go
 ```
-3. Execute o comando abaixo para iniciar o projeto em Go:
+3. Run the command below to start the project in Go:
 ```bash
   go run cmd/main/main.go
 ```
 
 ### Database
 
-1. Acesse a pasta do repositório:
-2. Execute o comando abaixo para iniciar o container com o banco de dados:
+1. Go to the repository folder:
+2. Run the command below to start the container with the Mongo database:
 ```bash
   docker-compose up
 ```
 
 ### Back-end (API)
 
-1. Acesse a pasta do repositório;
-2. Acesse a pasta do projeto:
+1. Go to the repository folder;
+2. Go to the project folder:
 ```bash
   cd nestjs-api
 ```
-3. Execute o comando abaixo para iniciar o projeto em Go:
+3. Run the command below to install the project dependencies:
+```bash
+  cd npm install
+```
+4. Run the command below to launch the API:
 ```bash
   npm run start:dev
 ```
 
 ### Images Server
 
-1. Acesse a pasta do repositório;
-2. Acesse a pasta do projeto:
+1. Go to the repository folder;
+2. Go to the project folder:
 ```bash
   cd nestjs-api
 ```
-3. Execute o comando abaixo para iniciar o servidor:
+3. Run the command below to start the image server:
 ```bash
   npm run asset-images
 ```
 
 ### Back-end (API) - Consumer Kafka
 
-1. Acesse a pasta do repositório;
-2. Acesse a pasta do projeto:
+1. Go to the repository folder;
+2. Go to the project folder:
 ```bash
   cd nestjs-api
 ```
-3. Execute o comando abaixo para iniciar o consumidor do Kafka na API:
+3. Run the command below to launch the Kafka consumer in the API:
 ```bash
   npm run consumer
 ```
 
 ### Front-end (Web Application)
 
-1. Acesse a pasta do repositório;
-2. Acesse a pasta do projeto:
+1. Go to the repository folder;
+2. Go to the project folder:
 ```bash
   cd next-frontend
 ```
-3. Execute o comando abaixo para iniciar a aplicação web:
+3. Run the command below to launch the web application:
 ```bash
   npm run dev
 ```
 
 ### Data Generator for the Database
 
-1. Acesse a pasta do repositório;
-2. Acesse a pasta do projeto:
+1. Go to the repository folder;
+2. Go to the project folder:
 ```bash
   cd nestjs-api
 ```
-3. Execute o comando abaixo para iniciar a aplicação web:
+3. Run the command below to start the data-generating application:
 ```bash
   npm run command simulate-assets-price
 ```
 
 ## Improvements
 
-- validação das requests
-- validação com websockets
-- autenticação na api e no next.js
-- user event driven para atualizar o saldo
-- separar a finalização da ordem, da atualização do saldo do ativo
-- criar event socket para atualizar o saldo do ativo na carteira
-- criar um notification no next.js + websocket para mostrar quando uma ordem foi executada
-- criar um saldo em reais para carteira
-- usar cache do lado servidor para consultar ativos e orders com preço fixo depois do horário de negociação
-- evitar que o websocket envie notificações se não houverem clientes
-- evitar que usuário não pertencente as orders de se enscrver no websocket de notificações daquela order
-- reprocessamento da finalização das orders em caso de falha
-- se for venda, verificar se o saldo é suficiente
-- testes
+- request validation;
+- validation with websockets;
+- authentication in the API and in next.js;
+- user event driven to update the balance;
+- separate the order completion from the asset balance update;
+- create event socket to update the asset balance in the wallet;
+- create a notification in next.js + websocket to show when an order was executed;
+- create a balance in reais for the wallet;
+- use server-side cache to query assets and orders with fixed price after trading hours;
+- prevent sending notifications if there are no customers;
+- prevent users not belonging to the orders from subscribing to the websocket notifications for that order;
+- reprocessing of order completion in case of failure;
+- if it is a sale, check if the balance is sufficient;
+- tests;
 
 ## License
 
