@@ -118,7 +118,7 @@ Queue:
 ```
 3. Run the command below to install the project dependencies:
 ```bash
-  cd npm install
+  npm install
 ```
 4. Run the command below to launch the API:
 ```bash
@@ -156,7 +156,11 @@ Queue:
 ```bash
   cd next-frontend
 ```
-3. Run the command below to launch the web application:
+3. Run the command below to install the project dependencies:
+```bash
+  npm install
+```
+4. Run the command below to launch the web application:
 ```bash
   npm run dev
 ```
